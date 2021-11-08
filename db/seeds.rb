@@ -8,50 +8,39 @@
 
 require 'faker'
 
-
-User.create(email: "jojo@yopmail.com", first_name: "Jojo", last_name: "Prout", description: "test1 test1")
-User.create(email: "dingo@yopmail.com", first_name: "dingo", last_name: "Pet", description: "test2 test2")
-User.create(email: "arno@yopmail.com", first_name: "Arno", last_name: "Oder", description: "test3 test3")
+User.destroy_all
+Event.destroy_all
 
 
-Event.create!(start_date: 2022-02-02, duration: 10, title: "twerk party", location: "lala", description: "lololol", price: 60) 
-
-
-
-
-nb_user = 100
-nb_events = 50
-nb_guests = 100
-
-
-nb_user.times do |x|
-  User.create(
-      email: Faker::Name.first_name+'@yopmail.com',
-      first_name: Faker::Name.first_name,
-      last_name: Faker::Name.last_name,
-      description: Faker::Lorem.paragraph_by_chars(number: 200, supplemental: false))
-  puts "Seeding of User nb #{x}"
+5.times do
+  u = User.create(first_name: Faker::Name.first_name,
+   last_name: Faker::Name.last_name,
+   description: Faker::ChuckNorris.fact)
+  u.email = u.first_name + '_' + u.last_name + '@yopmail.com'
+  u.save
 end
 
-#for the random startdate
-t1 = Time.now
-t2 = Time.parse("2022-01-01 00:00:00")
+puts 'User created !'
 
-nb_events.times do |x|
-  Event.create(
-    start_date: rand(t1..t2),
-    duration: rand(5..100)*5,
-    description: "lolololololololololoeoeeherhehrhrthjozrzefef",
-    location: Faker::Address.city,
-    price: rand(1..1000),
-    title: Faker::Book.title)
-  puts "Seeding of Event nb #{x}"
+5.times do
+  Event.create(title: Faker::DcComics.title,
+  start_date: Faker::Date.forward(days: 10),
+  duration: [5,10,20,30].sample,
+  description: Faker::Lorem.sentence(word_count: 15),
+  price: Faker::Number.between(from: 1, to: 1000),
+  location: Faker::JapaneseMedia::SwordArtOnline.location, admin_id: rand(1..5))
+  
 end
 
-nb_guests.times do |x|
-  Attendance.create(
-    user_id: User.all.sample.id,
-    event_id: Event.all.sample.id)
-  puts "Seeding of Guest nb #{x}"
+puts 'Event created !'
+puts "#{} "
+5.times do
+Attendance.create(
+  stripe_customer_id: "laquequete",
+  user_id: User.all.sample.id,
+  event_id: Event.all.sample.id
+)
 end
+
+puts 'Attendances created !'
 
