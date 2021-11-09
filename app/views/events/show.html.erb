@@ -1,0 +1,42 @@
+
+<body style="background-image: url(https://images.pexels.com/photos/1798642/pexels-photo-1798642.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260); background-size: 100%">
+<center>
+<div class="card" style="background-color: lightgrey; margin: 90px 250px; padding: 25px 0 25px 0; border: 1px solid lightgrey; border-radius: 30px">
+  <div class="card-header text-center">
+  <div class="panel panel-success class">
+  <% if @event.user_id %>
+        <div class="panel-heading">
+          Cet évènement a été crée par <b><%= @event.user.email %></b>
+        </div>
+        
+    </div>
+    </div>
+  
+    <div class="card-body">
+      <h3 class="card-title">Titre de l'évènement : <%= @event.title %></h3>
+      <p class="card-text">Description de l'évènement : "<%= @event.description %>"</p>
+      <p class="card-text">Prix d'un billet d'entrée : <strong><%= @event.price %> €</strong></p>
+      <p class="card-text">Durée de l'évènement : <%= @event.duration %> minutes </p>
+      <p class="card-text">Lieu de l'évènement : <%= @event.location %></p>
+      <p class="card-text">Date de début : <%= @event.start_date %></p>
+
+      <p class="card-text">nombre d'inscrit : <span class="badge">2<%= %></span></p>
+
+      
+
+
+
+  <% end %>
+  
+
+  </div>
+
+
+
+
+
+<a class="btn btn-primary" href='<%= events_path %>'>Retour à l'acceuil</a>
+<a class="btn btn-primary" href='<%= events_path %>'>Je participe !</a>
+</center>
+</body>
+

@@ -1,0 +1,26 @@
+<body style="background-image: url(https://images.pexels.com/photos/1242348/pexels-photo-1242348.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260); background-size: 100%">
+<div class="container" style="max-width: 500px;">
+  <div class="row">
+    <div class="col-md-12">
+      <br><br><br>
+      <h1 class="h3 mb-3 font-weight-normal text-center">Mot de passe oublié?</h1>
+      <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+
+      <div class="field">
+        <%= f.label :email %><br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+      </div>
+      <br>
+      <div class="actions">
+        <%= f.submit "Créer un nouveau mot de passe", class: "btn btn-lg btn-primary btn-block" %>
+      </div>
+      <br>
+      <%= render "devise/shared/links" %>
+
+      <% end %>
+    </div>
+  </div>
+</div>
+
+

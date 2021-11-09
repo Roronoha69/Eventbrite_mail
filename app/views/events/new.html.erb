@@ -1,0 +1,40 @@
+<body style="background-image: url(https://images.pexels.com/photos/1535421/pexels-photo-1535421.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260); background-size: 100%">
+<div class="container" style="max-width: 500px;">
+  <div class="row">
+    <div class="col-md-12">
+      <br><br><br>
+      <h1 class="h3 mb-3 font-weight-normal text-center">Création d'un évènement</h1>
+  <%= form_tag url_for(action: 'create'), method: "post" do %>
+    <div class="form-group" style="text-align: center">
+      <%= label_tag 'Titre de ton évenement' %><br>
+      <%= text_field_tag 'title' %>
+      <br>
+      </br>
+      <%= label_tag 'Décris ton évenement' %>
+      <br/>
+      <%= text_field_tag 'description' %>
+      <br>
+      </br>
+      <%= label_tag 'Sa durée' %><br>
+      <%= number_field_tag 'duration', '5' %>
+      <br>
+      </br>
+      <%= label_tag 'Sa date' %><br>
+      <%= date_field_tag 'start_date' %>
+      <br>
+      </br>
+      <%= label_tag 'La ville du réroulement' %><br>
+      <%= text_field_tag 'location' %>
+      <br>
+      </br>
+      <%= label_tag 'Le prix' %><br>
+      <%= number_field_tag 'price' %>
+      <br>
+      <br/>
+      <%= submit_tag 'Soumettre', class: 'btn btn-primary' %>
+      </div>
+  <% end %>
+</div>
+</div>
+</div>
+</body>

@@ -1,0 +1,48 @@
+<% if flash.any? %> 
+  <% flash.each do |type, msg| %> 
+    <div class="alert alert-<%= type %>"> 
+    <%= msg %> 
+    </div> 
+  <% end %> 
+<% end %>
+
+  <head>
+    <title> 100Code Event </title>
+  </head>
+
+<body style="background-image: url(https://images.pexels.com/photos/1798642/pexels-photo-1798642.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260); background-size: 100%">
+      <center>
+  <div class="jumbotron" style="background-image: url(https://images.pexels.com/photos/139321/pexels-photo-139321.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260); background-size: 100%;"> 
+    <div class="container">
+      <div class=fond>
+        <h1> Bienvenue sur 100Code Event </h1> 
+        </br>
+        <p> Crée, participez a des évènements, içi toutes l'actualités pour te faire vibrer !</p>
+        </br>
+        </br>
+        <p><a class="btn btn-primary btn-lg" href='<%= new_event_path() %>' role="button"> Crée ton évènement</a>
+        </center>
+      </div>
+    </div>
+  </div>
+<center>
+
+<div class="container">
+    <% puts @events %>
+      <% @events.each do |event| %>
+        <% if event.user_id %>
+        <!-- Example row of columns -->
+          <div class="row" style="width: 85%; margin: 10px; padding: 25px 0; border: 1px solid grey; border-radius: 30px; background-color: lightgrey">
+            <span class="border border-info">
+              <h2><%= event.title %></h2>
+              <p><%= event.description %></p>
+              <p><a class="btn btn-secondary" href="<%= event_path(event.id) %>" role="button">Ça m'interesse</a></p>
+            </span> 
+        <% end %>      
+            <%= button_to "Supprimer", event, method: :delete, data: { confirm: "Tu es sur ?" }, class: "btn btn-danger" %>
+          </br>
+          </br>
+        </div>  
+      <% end %>
+        <hr>
+</div>

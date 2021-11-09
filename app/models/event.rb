@@ -1,7 +1,8 @@
 class Event < ApplicationRecord
   
   has_many :attendances
-  has_many :users, through: :attendances
+  belongs_to :user
+
 
   #validates :start_date,
    #presence: true
@@ -14,6 +15,8 @@ class Event < ApplicationRecord
   validates :title,
    presence: true,
    length: { in: 5..140 }
+
+  
 
   #validates :description,
    #presence: true,
