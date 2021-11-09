@@ -1,24 +1,48 @@
-# README
+# THP - Projet Validant - EventBrite Jour 2
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+<hr>
 
-Things you may want to cover:
+Créer par l'équipe 100Code (Romuald Petit, Lucas Derhore, Justin MBODJE, Quentin Mainieri, Frédéric Coelho, Valentin Derhore)
 
-* Ruby version
+<hr>
 
-* System dependencies
+## Premier point :
 
-* Configuration
+- Faire un `gem install bundler:2.2.29`
+- Ensuite `bundle install`
+- Ensuite `rails db:create`
+- Ensuite `rails db:migrate`
+- Vérifier si migrations sont up avec : `rails db:migrate:status`
+- Enfin ouvrir le serveur `rails server`
+- Ouvrir une fenetre du navigateur (exemple: chrome) et aller sur: `localhost:3000`
+- Lien Heroku : 
 
-* Database creation
+<hr>
 
-* Database initialization
 
-* How to run the test suite
+## Fonctionalitées :
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+A ce jour nous avons pour fonctionalitées :
 
-* ...
+- L'inscription, avec mot de passe et e-mail sécurisé
+- La notion de login, logout, session, current user
+- La récupération de mot de passe par e-mail
+- Le comptage de login
+- Création d'un évènement
+- Affichage de l'évènement grâce a un lien "Intéréssé"
+- Différentes permissions pour acceder a certaines fonctionnalitées du site
+
+
+<hr>
+
+
+## Soon prochains jours :
+
+
+En developpement :
+
+- Participation a l'évènement sous forme de compteur actif
+- Système de paiement
+- Système de localisation
+- 
