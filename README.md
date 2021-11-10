@@ -45,4 +45,9 @@ En developpement :
 - Participation a l'évènement sous forme de compteur actif
 - Système de paiement
 - Système de localisation
-- 
+
+Et plus encore...100Code
+
+Enjoy sur notre site, j'espère qu'il sera a votre gout !
+
+
