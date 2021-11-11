@@ -27,6 +27,7 @@ class EventsController < ApplicationController
     )
 
 
+    
     @user = User.find_by(email: params[:email])
     #@gossip = Gossip.create(gossip_params)
     

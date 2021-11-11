@@ -1,0 +1,19 @@
+
+<div class="container">
+    <% puts @attendances %>
+      <% @attendances.each do |attendance| %>
+        <% if attendance.event %>
+        <!-- Example row of columns -->
+          <div class="row" style="width: 85%; margin: 10px; padding: 25px 0; border: 1px solid grey; border-radius: 30px; background-color: lightgrey">
+            <span class="border border-info">
+              <h2><%= attendance.event.title %></h2>
+              <p><%= attendance.event.description %></p>
+            </span> 
+        <% end %>      
+            
+          </br>
+          </br>
+        </div>  
+      <% end %>
+        <hr>
+</div>

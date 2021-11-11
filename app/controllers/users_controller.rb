@@ -11,13 +11,19 @@ class UsersController < ApplicationController
     end
     
     def show
-      #  @user = User.find(params[:id])
+      @user = User.find(params[:id])
     end
     
     def create
         
         #@user = User.new(users_params)
-        @user = User.new(first_name: params[:first_name], last_name: params[:last_name], description: params[:description], email: params[:email], age: params[:age], password: params[:pass_first], password_confirmation: params[:pass_second])
+        @user = User.new(first_name: params[:first_name],
+         last_name: params[:last_name],
+         description: params[:description],
+         email: params[:email],
+         age: params[:age],
+         password: params[:pass_first],
+         password_confirmation: params[:pass_second])
         
         if @user.save
           puts "Je save l'utilisateur"
